@@ -1,0 +1,42 @@
+{
+  "name": "@nightlylabs/aptos-wallet-standard",
+  "version": "0.0.1",
+  "license": "Apache-2.0",
+  "author": "Norbert Bodziony <norbert@nightly.app>",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "src",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "clean": "rm -rf tsconfig.tsbuildinfo ./dist",
+    "dev": "pnpm build --watch",
+    "build": "pnpm build:types && pnpm build:tsup",
+    "build:tsup": "tsup ./src/index.ts --format esm,cjs --sourcemap",
+    "build:types": "tsc --build",
+    "prepublishOnly": "pnpm build",
+    "prettier:check": "prettier -c --ignore-unknown .",
+    "prettier:fix": "prettier -w --ignore-unknown ."
+  },
+  "dependencies": {
+    "@wallet-standard/core": "1.0.3",
+    "@aptos-labs/wallet-adapter-core": "^3.0.0",
+    "aptos": "^1.20.0"
+  },
+  "devDependencies": {
+    "tsup": "^7.1.0",
+    "typescript": "^5.1.6",
+    "prettier": "^2.5.1"
+  }
+}
