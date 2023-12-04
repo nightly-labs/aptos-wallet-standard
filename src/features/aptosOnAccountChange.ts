@@ -10,4 +10,4 @@ export type AptosOnAccountChangeFeature = {
 
 export type AptosOnAccountChangeMethod = (input: AptosOnAccountChangeInput) => Promise<void>
 
-export type AptosOnAccountChangeInput = OnAccountChange
+export type AptosOnAccountChangeInput = Parameters<OnAccountChange>[0]

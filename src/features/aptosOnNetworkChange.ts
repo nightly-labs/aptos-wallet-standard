@@ -10,4 +10,4 @@ export type AptosOnNetworkChangeFeature = {
 
 export type AptosOnNetworkChangeMethod = (input: AptosOnNetworkChangeInput) => Promise<void>
 
-export type AptosOnNetworkChangeInput = OnNetworkChange
+export type AptosOnNetworkChangeInput = Parameters<OnNetworkChange>[0]
