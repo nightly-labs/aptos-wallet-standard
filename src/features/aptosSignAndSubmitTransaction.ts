@@ -8,7 +8,7 @@ export type AptosSignAndSubmitTransaction = '1.0.0'
  */
 export type AptosSignAndSubmitTransactionFeature = {
   /** Namespace for the feature. */
-  'sui:signAndSubmitTransaction': {
+  'aptos:signAndSubmitTransaction': {
     /** Version of the feature API. */
     version: AptosSignAndSubmitTransaction
     signAndSubmitTransaction: AptosSignAndSubmitTransactionMethod

@@ -8,7 +8,7 @@ export type AptosSignMessage = '1.0.0'
  */
 export type AptosSignMessageFeature = {
   /** Namespace for the feature. */
-  'sui:signMessage': {
+  'aptos:signMessage': {
     /** Version of the feature API. */
     version: AptosSignMessage
     signMessage: AptosSignMessageMethod
