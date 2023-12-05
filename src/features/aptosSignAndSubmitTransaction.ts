@@ -16,14 +16,9 @@ export type AptosSignAndSubmitTransactionFeature = {
 }
 
 export type AptosSignAndSubmitTransactionMethod = (
-  input: AptosSignAndSubmitTransactionInput
-) => Promise<AptosSignAndSubmitTransactionOutput>
-
-/** Input for signing transactions. */
-export interface AptosSignAndSubmitTransactionInput {
-  transaction: Types.TransactionPayload
+  transaction: Types.TransactionPayload,
   options?: any
-}
+) => Promise<AptosSignAndSubmitTransactionOutput>
 
 /** Output of signing transactions. */
 export interface AptosSignAndSubmitTransactionOutput extends TransactionHash {}
