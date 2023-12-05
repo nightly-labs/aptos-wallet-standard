@@ -5,8 +5,9 @@ import { MinimallyRequiredFeatures } from './features'
 // These features are absolutely required for wallets to function in the Aptos ecosystem.
 // Eventually, as wallets have more consistent support of features, we may want to extend this list.
 const REQUIRED_FEATURES: (keyof MinimallyRequiredFeatures)[] = [
-  'standard:connect',
-  'standard:events'
+  'aptos:connect',
+  'aptos:signAndSubmitTransaction',
+  'aptos:signMessage'
 ]
 
 export function isWalletWithRequiredFeatureSet<AdditionalFeatures extends Wallet['features']>(

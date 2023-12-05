@@ -1,8 +1,6 @@
 import type {
   IdentifierRecord,
-  StandardConnectFeature,
   StandardDisconnectFeature,
-  StandardEventsFeature,
   WalletWithFeatures
 } from '@wallet-standard/core'
 
@@ -17,13 +15,12 @@ import { AptosOnNetworkChangeFeature } from './aptosOnNetworkChange'
 /**
  * Wallet Standard features that are unique to Aptos, and that all Aptos wallets are expected to implement.
  */
-export type AptosFeatures = AptosSignAndSubmitTransactionFeature & AptosSignMessageFeature
+export type AptosFeatures = AptosSignAndSubmitTransactionFeature &
+  AptosSignMessageFeature &
+  AptosConnectFeature
 
 export type WalletWithAptosFeatures = WalletWithFeatures<
-  StandardConnectFeature &
-    StandardEventsFeature &
-    AptosFeatures &
-    AptosConnectFeature &
+  AptosFeatures &
     // Disconnect is an optional feature:
     Partial<StandardDisconnectFeature> &
     Partial<AptosOnAccountChangeFeature> &
@@ -42,7 +39,7 @@ export type WalletWithRequiredFeatures = WalletWithFeatures<
     IdentifierRecord<unknown>
 >
 
-export type MinimallyRequiredFeatures = StandardConnectFeature & StandardEventsFeature
+export type MinimallyRequiredFeatures = AptosFeatures
 
 export * from './aptosSignAndSubmitTransaction'
 export * from './aptosSignMessage'
