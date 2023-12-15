@@ -1,6 +1,6 @@
 {
   "name": "@nightlylabs/aptos-wallet-standard",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "license": "Apache-2.0",
   "author": "Norbert Bodziony <norbert@nightly.app>",
   "main": "./dist/index.js",

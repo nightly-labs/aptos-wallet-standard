@@ -9,7 +9,10 @@ export type AptosConnectFeature = {
   }
 }
 
-export type AptosConnectMethod = (networkInfo?: AptosConnectInput) => Promise<AptosConnectOutput>
+export type AptosConnectMethod = (
+  silent?: boolean,
+  networkInfo?: AptosConnectInput
+) => Promise<AptosConnectOutput>
 export type AptosConnectInput = {
   name: string | Network
   chainId?: string
