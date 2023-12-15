@@ -1,4 +1,5 @@
-import { NetworkInfo } from '@aptos-labs/wallet-adapter-core'
+import { Network } from 'aptos'
+
 export type AptosNetwork = '1.0.0'
 
 export type AptosNetworkFeature = {
@@ -9,4 +10,8 @@ export type AptosNetworkFeature = {
 }
 
 export type AptosNetworkMethod = () => Promise<AptosNetworkOutput>
-export interface AptosNetworkOutput extends NetworkInfo {}
+export interface AptosNetworkOutput {
+  name: string | Network
+  chainId?: string
+  url?: string
+}

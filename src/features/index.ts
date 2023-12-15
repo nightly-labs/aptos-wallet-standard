@@ -11,6 +11,7 @@ import { AptosConnectFeature } from './aptosConnect'
 import { AptosNetworkFeature } from './aptosNetwork'
 import { AptosOnAccountChangeFeature } from './aptosOnAccountChange'
 import { AptosOnNetworkChangeFeature } from './aptosOnNetworkChange'
+import { AptosChangeNetworkFeature } from './aptosChangeNetwork'
 
 /**
  * Wallet Standard features that are unique to Aptos, and that all Aptos wallets are expected to implement.
@@ -26,6 +27,7 @@ export type WalletWithAptosFeatures = WalletWithFeatures<
     Partial<AptosOnAccountChangeFeature> &
     Partial<AptosOnNetworkChangeFeature> &
     Partial<AptosNetworkFeature> &
+    Partial<AptosChangeNetworkFeature> &
     Partial<AptosAccountFeature>
 >
 
@@ -48,3 +50,4 @@ export * from './aptosConnect'
 export * from './aptosNetwork'
 export * from './aptosOnAccountChange'
 export * from './aptosOnNetworkChange'
+export * from './aptosChangeNetwork'

@@ -1,10 +1,10 @@
-import { AccountInfo } from '@aptos-labs/wallet-adapter-core'
+import { AccountInfo, AdapterPlugin } from '@aptos-labs/wallet-adapter-core'
 export type AptosAccount = '1.0.0'
 
 export type AptosAccountFeature = {
   'aptos:account': {
     version: AptosAccount
-    account: AptosAccountMethod
+    account: AdapterPlugin
   }
 }
 
