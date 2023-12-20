@@ -1,12 +1,20 @@
-import { AccountInfo, AdapterPlugin } from '@aptos-labs/wallet-adapter-core'
-export type AptosAccount = '1.0.0'
+import { AccountInfo } from '../misc'
 
+/** Version of the feature. */
+export type AptosAccountVersion = '1.0.0'
+/** Name of the feature. */
+export const AptosAccountNamespace = 'aptos:account'
+
+/** TODO: docs */
 export type AptosAccountFeature = {
-  'aptos:account': {
-    version: AptosAccount
-    account: AdapterPlugin
+  /** Namespace for the feature. */
+  [AptosAccountNamespace]: {
+    /** Version of the feature API. */
+    version: AptosAccountVersion
+    account: AptosAccountMethod
   }
 }
-
+/** TODO: docs */
 export type AptosAccountMethod = () => Promise<AptosAccountOutput>
-export interface AptosAccountOutput extends AccountInfo {}
+/** TODO: docs */
+export type AptosAccountOutput = AccountInfo

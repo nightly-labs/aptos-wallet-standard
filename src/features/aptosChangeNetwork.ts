@@ -1,17 +1,28 @@
-import { Network } from 'aptos'
+import { NetworkInfo } from '../misc'
 
-export type AptosChangeNetwork = '1.0.0'
-
+/** Version of the feature. */
+export type AptosChangeNetworkVersion = '1.0.0'
+/** Name of the feature. */
+export const AptosChangeNetworkNamespace = 'aptos:changeNetwork'
+/** TODO: docs */
 export type AptosChangeNetworkFeature = {
-  'aptos:changeNetwork': {
-    version: AptosChangeNetwork
+  /** Namespace for the feature. */
+  [AptosChangeNetworkNamespace]: {
+    /** Version of the feature API. */
+    version: AptosChangeNetworkVersion
     changeNetwork: AptosChangeNetworkMethod
   }
 }
 
-export type AptosChangeNetworkMethod = (input: AptosChangeNetworkInput) => Promise<void>
-export type AptosChangeNetworkInput = {
-  name: string | Network
-  chainId?: string
-  url?: string
+/** TODO: docs */
+export type AptosChangeNetworkMethod = (
+  input: AptosChangeNetworkInput
+) => Promise<AptosChangeNetworkOutput>
+/** TODO: docs */
+export type AptosChangeNetworkInput = NetworkInfo
+
+/** TODO: docs */
+export interface AptosChangeNetworkOutput {
+  success: boolean
+  reason?: string
 }

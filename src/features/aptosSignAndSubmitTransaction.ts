@@ -1,28 +1,26 @@
-import { Types } from 'aptos'
-/** The latest API version of the signTransactionBlock API. */
-export type AptosSignAndSubmitTransaction = '1.0.0'
+import { AnyRawTransaction } from '@aptos-labs/ts-sdk'
+import { TransactionHash } from '../misc'
 
+/** Version of the feature. */
+export type AptosSignAndSubmitTransactionVersion = '1.0.0'
+/** Name of the feature. */
+export const AptosSignAndSubmitTransactionNamespace = 'aptos:signAndSubmitTransaction'
 /**
  * A Wallet Standard feature for signing a transaction, and returning the
- * serialized transaction and transaction signature.
+ * hash of the transaction.
  */
 export type AptosSignAndSubmitTransactionFeature = {
   /** Namespace for the feature. */
-  'aptos:signAndSubmitTransaction': {
+  [AptosSignAndSubmitTransactionNamespace]: {
     /** Version of the feature API. */
-    version: AptosSignAndSubmitTransaction
+    version: AptosSignAndSubmitTransactionVersion
     signAndSubmitTransaction: AptosSignAndSubmitTransactionMethod
   }
 }
-
+/** TODO: docs */
 export type AptosSignAndSubmitTransactionMethod = (
-  transaction: Types.TransactionPayload,
-  options?: any
+  transaction: AnyRawTransaction
 ) => Promise<AptosSignAndSubmitTransactionOutput>
 
 /** Output of signing transactions. */
-export interface AptosSignAndSubmitTransactionOutput extends TransactionHash {}
-
-export interface TransactionHash {
-  hash: Types.HexEncodedBytes
-}
+export type AptosSignAndSubmitTransactionOutput = TransactionHash

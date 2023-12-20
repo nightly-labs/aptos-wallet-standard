@@ -1,4 +1,3 @@
-import { WalletName } from '@aptos-labs/wallet-adapter-core'
 import {
   AptosAccountMethod,
   AptosChangeNetworkMethod,
@@ -11,8 +10,8 @@ import {
   AptosSignMessageMethod
 } from './features'
 
-export interface AptosAdapter<Name extends string = string> {
-  name: WalletName<Name>
+export interface AptosAdapter {
+  name: string
   chains: string[]
   features: AptosFeatures
   url: string

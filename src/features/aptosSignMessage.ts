@@ -1,26 +1,40 @@
-import { SignMessagePayload, SignMessageResponse } from '@aptos-labs/wallet-adapter-core'
-/** The latest API version of the signmessageBlock API. */
-export type AptosSignMessage = '1.0.0'
+/** Version of the feature. */
+export type AptosSignMessageVersion = '1.0.0'
+/** Name of the feature. */
+export const AptosSignMessageNamespace = 'aptos:signMessage'
 
-/**
- * A Wallet Standard feature for signing a message, and returning the
- * serialized message and message signature.
- */
+/** TODO: docs */
 export type AptosSignMessageFeature = {
   /** Namespace for the feature. */
-  'aptos:signMessage': {
+  [AptosSignMessageNamespace]: {
     /** Version of the feature API. */
-    version: AptosSignMessage
+    version: AptosSignMessageVersion
     signMessage: AptosSignMessageMethod
   }
 }
-
+/** TODO: docs */
 export type AptosSignMessageMethod = (
   input: AptosSignMessageInput
 ) => Promise<AptosSignMessageOutput>
 
-/** Input for signing messages. */
-export type AptosSignMessageInput = SignMessagePayload
+/** TODO: docs */
+export type AptosSignMessageInput = {
+  address?: boolean
+  application?: boolean
+  chainId?: boolean
+  message: string
+  nonce: string
+}
 
-/** Output of signing messages. */
-export interface AptosSignMessageOutput extends SignMessageResponse {}
+/** TODO: docs */
+export type AptosSignMessageOutput = {
+  address?: string
+  application?: string
+  chainId?: number
+  fullMessage: string
+  message: string
+  nonce: string
+  prefix: 'APTOS'
+  signature: string | string[]
+  bitmap?: Uint8Array
+}

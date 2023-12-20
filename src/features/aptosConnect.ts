@@ -1,21 +1,22 @@
-import { AccountInfo } from '@aptos-labs/wallet-adapter-core'
-import { Network } from 'aptos'
-export type AptosConnect = '1.0.0'
+import { AccountInfo, NetworkInfo } from '../misc'
 
+/** Version of the feature. */
+export type AptosConnectVersion = '1.0.0'
+/** Name of the feature. */
+export const AptosConnectNamespace = 'aptos:connect'
+/** TODO: docs */
 export type AptosConnectFeature = {
-  'aptos:connect': {
-    version: AptosConnect
+  /** Namespace for the feature. */
+  [AptosConnectNamespace]: {
+    /** Version of the feature API. */
+    version: AptosConnectVersion
     connect: AptosConnectMethod
   }
 }
-
+/** TODO: docs */
 export type AptosConnectMethod = (
   silent?: boolean,
-  networkInfo?: AptosConnectInput
+  networkInfo?: NetworkInfo
 ) => Promise<AptosConnectOutput>
-export type AptosConnectInput = {
-  name: string | Network
-  chainId?: string
-  url?: string
-}
-export interface AptosConnectOutput extends AccountInfo {}
+/** TODO: docs */
+export type AptosConnectOutput = AccountInfo

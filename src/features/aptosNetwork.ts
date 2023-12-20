@@ -1,17 +1,19 @@
-import { Network } from 'aptos'
+import { NetworkInfo } from '../misc'
 
-export type AptosNetwork = '1.0.0'
-
+/** Version of the feature. */
+export type AptosNetworkVersion = '1.0.0'
+/** Name of the feature. */
+export const AptosNetworkNamespace = 'aptos:network'
+/** TODO: docs */
 export type AptosNetworkFeature = {
-  'aptos:network': {
-    version: AptosNetwork
+  /** Namespace for the feature. */
+  [AptosNetworkNamespace]: {
+    /** Version of the feature API. */
+    version: AptosNetworkVersion
     network: AptosNetworkMethod
   }
 }
-
+/** TODO: docs */
 export type AptosNetworkMethod = () => Promise<AptosNetworkOutput>
-export interface AptosNetworkOutput {
-  name: string | Network
-  chainId?: string
-  url?: string
-}
+/** TODO: docs */
+export type AptosNetworkOutput = NetworkInfo

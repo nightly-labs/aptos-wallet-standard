@@ -1,13 +1,19 @@
-import { OnNetworkChange } from '@aptos-labs/wallet-adapter-core'
-export type AptosOnNetworkChange = '1.0.0'
+import { NetworkInfo } from '../misc'
 
+/** Version of the feature. */
+export type AptosOnNetworkChangeVersion = '1.0.0'
+/** Name of the feature. */
+export const AptosOnNetworkChangeNamespace = 'aptos:onNetworkChange'
+/** TODO: docs */
 export type AptosOnNetworkChangeFeature = {
-  'aptos:onNetworkChange': {
-    version: AptosOnNetworkChange
+  /** Namespace for the feature. */
+  [AptosOnNetworkChangeNamespace]: {
+    /** Version of the feature API. */
+    version: AptosOnNetworkChangeVersion
     onNetworkChange: AptosOnNetworkChangeMethod
   }
 }
-
+/** TODO: docs */
 export type AptosOnNetworkChangeMethod = (input: AptosOnNetworkChangeInput) => Promise<void>
-
-export type AptosOnNetworkChangeInput = Parameters<OnNetworkChange>[0]
+/** TODO: docs */
+export type AptosOnNetworkChangeInput = (newNetwork: NetworkInfo) => void
