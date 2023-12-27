@@ -1,23 +1,26 @@
+import { StandardDisconnectMethod } from '@wallet-standard/core'
 import {
   AptosAccountMethod,
   AptosChangeNetworkMethod,
   AptosConnectMethod,
-  AptosFeatures,
   AptosNetworkMethod,
   AptosOnAccountChangeMethod,
   AptosOnNetworkChangeMethod,
   AptosSignAndSubmitTransactionMethod,
-  AptosSignMessageMethod
+  AptosSignMessageMethod,
+  FullAptosFeatures
 } from './features'
+import { ChainsId } from './chains'
 
 export interface AptosAdapter {
   name: string
-  chains: string[]
-  features: AptosFeatures
+  chains: ChainsId[]
+  features: FullAptosFeatures
   url: string
   icon: `data:image/${'svg+xml' | 'webp' | 'png' | 'gif'};base64,${string}`
   account: AptosAccountMethod
   connect: AptosConnectMethod
+  disconnect: StandardDisconnectMethod
   network: AptosNetworkMethod
   changeNetwork: AptosChangeNetworkMethod
   signAndSubmitTransaction: AptosSignAndSubmitTransactionMethod

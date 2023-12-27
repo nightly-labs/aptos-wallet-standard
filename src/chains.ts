@@ -1,3 +1,4 @@
+export type ChainsId = `${string}:${string}` // e.g. 'aptos:devnet'
 /** APTOS Devnet */
 export const APTOS_DEVNET_CHAIN = 'aptos:devnet'
 

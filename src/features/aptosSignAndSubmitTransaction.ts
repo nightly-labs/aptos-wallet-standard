@@ -1,5 +1,5 @@
-import { AnyRawTransaction } from '@aptos-labs/ts-sdk'
-import { TransactionHash } from '../misc'
+import { AnyRawTransaction, PendingTransactionResponse } from '@aptos-labs/ts-sdk'
+import { SignAndSubmitTransactionOptions, TransactionHash } from '../misc'
 
 /** Version of the feature. */
 export type AptosSignAndSubmitTransactionVersion = '1.0.0'
@@ -19,8 +19,13 @@ export type AptosSignAndSubmitTransactionFeature = {
 }
 /** TODO: docs */
 export type AptosSignAndSubmitTransactionMethod = (
-  transaction: AnyRawTransaction
+  ...args: AptosSignAndSubmitTransactionInput
 ) => Promise<AptosSignAndSubmitTransactionOutput>
 
+/** TODO: docs */
+export type AptosSignAndSubmitTransactionInput = [
+  transaction: AnyRawTransaction,
+  options?: SignAndSubmitTransactionOptions
+]
 /** Output of signing transactions. */
-export type AptosSignAndSubmitTransactionOutput = TransactionHash
+export type AptosSignAndSubmitTransactionOutput = PendingTransactionResponse

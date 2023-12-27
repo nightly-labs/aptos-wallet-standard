@@ -7,7 +7,8 @@ import { MinimallyRequiredFeatures } from './features'
 const REQUIRED_FEATURES: (keyof MinimallyRequiredFeatures)[] = [
   'aptos:connect',
   'aptos:signAndSubmitTransaction',
-  'aptos:signMessage'
+  'aptos:signMessage',
+  'aptos:signTransaction'
 ]
 
 export function isWalletWithRequiredFeatureSet<AdditionalFeatures extends Wallet['features']>(
