@@ -6,9 +6,9 @@ import type {
 
 import type { AptosSignAndSubmitTransactionFeature } from './aptosSignAndSubmitTransaction'
 import { AptosSignMessageFeature } from './aptosSignMessage'
-import { AptosAccountFeature } from './aptosAccount'
+import { AptosGetAccountFeature } from './aptosGetAccount'
 import { AptosConnectFeature } from './aptosConnect'
-import { AptosNetworkFeature } from './aptosNetwork'
+import { AptosGetNetworkFeature } from './aptosGetNetwork'
 import { AptosOnAccountChangeFeature } from './aptosOnAccountChange'
 import { AptosOnNetworkChangeFeature } from './aptosOnNetworkChange'
 import { AptosChangeNetworkFeature } from './aptosChangeNetwork'
@@ -26,9 +26,9 @@ export type AptosFeatures = AptosSignAndSubmitTransactionFeature &
  */
 export type AdditionalAptosFeatures = AptosOnAccountChangeFeature &
   AptosOnNetworkChangeFeature &
-  AptosNetworkFeature &
+  AptosGetNetworkFeature &
   AptosChangeNetworkFeature &
-  AptosAccountFeature
+  AptosGetAccountFeature
 /**
  * Represents a wallet with all Aptos features.
  */
@@ -53,9 +53,9 @@ export type MinimallyRequiredFeatures = AptosFeatures
 
 export * from './aptosSignAndSubmitTransaction'
 export * from './aptosSignMessage'
-export * from './aptosAccount'
+export * from './aptosGetAccount'
 export * from './aptosConnect'
-export * from './aptosNetwork'
+export * from './aptosGetNetwork'
 export * from './aptosOnAccountChange'
 export * from './aptosOnNetworkChange'
 export * from './aptosChangeNetwork'

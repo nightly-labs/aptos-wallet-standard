@@ -14,9 +14,9 @@ export type AptosConnectFeature = {
   }
 }
 /** TODO: docs */
-export type AptosConnectMethod = (
-  silent?: boolean,
-  networkInfo?: NetworkInfo
-) => Promise<AptosConnectOutput>
+export type AptosConnectMethod = (...args: AptosConnectInput) => Promise<AptosConnectOutput>
+
+/** TODO: docs */
+export type AptosConnectInput = [silent?: boolean, networkInfo?: NetworkInfo]
 /** TODO: docs */
 export type AptosConnectOutput = AccountInfo

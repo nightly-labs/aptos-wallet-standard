@@ -1,9 +1,9 @@
 import { StandardDisconnectMethod } from '@wallet-standard/core'
 import {
-  AptosAccountMethod,
+  AptosGetAccountMethod,
   AptosChangeNetworkMethod,
   AptosConnectMethod,
-  AptosNetworkMethod,
+  AptosGetNetworkMethod,
   AptosOnAccountChangeMethod,
   AptosOnNetworkChangeMethod,
   AptosSignAndSubmitTransactionMethod,
@@ -18,10 +18,10 @@ export interface AptosAdapter {
   features: FullAptosFeatures
   url: string
   icon: `data:image/${'svg+xml' | 'webp' | 'png' | 'gif'};base64,${string}`
-  account: AptosAccountMethod
+  getAccount: AptosGetAccountMethod
+  getNetwork: AptosGetNetworkMethod
   connect: AptosConnectMethod
   disconnect: StandardDisconnectMethod
-  network: AptosNetworkMethod
   changeNetwork: AptosChangeNetworkMethod
   signAndSubmitTransaction: AptosSignAndSubmitTransactionMethod
   signMessage: AptosSignMessageMethod
