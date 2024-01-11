@@ -1,12 +1,10 @@
-import { AnyNumber } from '@aptos-labs/ts-sdk'
+import { Account } from '@aptos-labs/ts-sdk'
 
 /** TODO: docs */
 export type TransactionHash = `0x${string}`
 /** TODO: docs */
 export type AccountInfo = {
-  address: string
-  publicKey: string | string[]
-  minKeysRequired?: number
+  account: Account
   ansName?: string
 }
 /** TODO: docs */
@@ -15,11 +13,14 @@ export interface NetworkInfo {
   chainId: string // Chain ID of the network.
   url?: string // RPC URL of the network.
 }
-/** TODO: docs */
 
-export interface SignAndSubmitTransactionOptions {
-  maxGasAmount?: number
-  gasUnitPrice?: number
-  expireTimestamp?: number
-  accountSequenceNumber?: AnyNumber
+export interface Rejected {
+  status: 'rejected'
+  reason?: string
 }
+
+export interface Approved<TArgs> {
+  status: 'approved'
+  args: TArgs
+}
+export type Response<TArgs> = Approved<TArgs> | Rejected

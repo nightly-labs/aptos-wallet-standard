@@ -1,4 +1,4 @@
-import { NetworkInfo } from '../misc'
+import { NetworkInfo, Response } from '../misc'
 
 /** Version of the feature. */
 export type AptosGetNetworkVersion = '1.0.0'
@@ -14,6 +14,6 @@ export type AptosGetNetworkFeature = {
   }
 }
 /** TODO: docs */
-export type AptosGetNetworkMethod = () => Promise<AptosGetNetworkOutput>
+export type AptosGetNetworkMethod = () => Promise<Response<AptosGetNetworkOutput>>
 /** TODO: docs */
 export type AptosGetNetworkOutput = NetworkInfo

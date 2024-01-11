@@ -1,3 +1,5 @@
+import { Response } from '../misc'
+
 /** Version of the feature. */
 export type AptosSignMessageVersion = '1.0.0'
 /** Name of the feature. */
@@ -15,7 +17,7 @@ export type AptosSignMessageFeature = {
 /** TODO: docs */
 export type AptosSignMessageMethod = (
   input: AptosSignMessageInput
-) => Promise<AptosSignMessageOutput>
+) => Promise<Response<AptosSignMessageOutput>>
 
 /** TODO: docs */
 export type AptosSignMessageInput = {
