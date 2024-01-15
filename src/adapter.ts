@@ -8,14 +8,14 @@ import {
   AptosOnNetworkChangeMethod,
   AptosSignAndSubmitTransactionMethod,
   AptosSignMessageMethod,
-  FullAptosFeatures
+  AptosFeatures
 } from './features'
 import { ChainsId } from './chains'
 
 export interface AptosAdapter {
   name: string
   chains: ChainsId[]
-  features: FullAptosFeatures
+  features: AptosFeatures
   url: string
   icon: `data:image/${'svg+xml' | 'webp' | 'png' | 'gif'};base64,${string}`
   getAccount: AptosGetAccountMethod
