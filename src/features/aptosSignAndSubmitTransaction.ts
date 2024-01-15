@@ -1,5 +1,5 @@
 import { AnyRawTransaction, PendingTransactionResponse } from '@aptos-labs/ts-sdk'
-import { Response } from '../misc'
+import { UserResponse } from '../misc'
 /** Version of the feature. */
 export type AptosSignAndSubmitTransactionVersion = '1.0.0'
 /** Name of the feature. */
@@ -19,7 +19,7 @@ export type AptosSignAndSubmitTransactionFeature = {
 /** TODO: docs */
 export type AptosSignAndSubmitTransactionMethod = (
   transaction: AptosSignAndSubmitTransactionInput
-) => Promise<Response<AptosSignAndSubmitTransactionOutput>>
+) => Promise<UserResponse<AptosSignAndSubmitTransactionOutput>>
 
 /** TODO: docs */
 export type AptosSignAndSubmitTransactionInput = AnyRawTransaction

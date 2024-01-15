@@ -1,4 +1,4 @@
-import { AccountInfo, Response } from '../misc'
+import { AccountInfo } from '../misc'
 
 /** Version of the feature. */
 export type AptosGetAccountVersion = '1.0.0'
@@ -15,6 +15,6 @@ export type AptosGetAccountFeature = {
   }
 }
 /** TODO: docs */
-export type AptosGetAccountMethod = () => Promise<Response<AptoGetsAccountOutput>>
+export type AptosGetAccountMethod = () => Promise<AptoGetsAccountOutput>
 /** TODO: docs */
 export type AptoGetsAccountOutput = AccountInfo

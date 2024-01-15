@@ -1,4 +1,4 @@
-import { AccountInfo, NetworkInfo, Response } from '../misc'
+import { AccountInfo, NetworkInfo, UserResponse } from '../misc'
 
 /** Version of the feature. */
 export type AptosConnectVersion = '1.0.0'
@@ -16,7 +16,7 @@ export type AptosConnectFeature = {
 /** TODO: docs */
 export type AptosConnectMethod = (
   ...args: AptosConnectInput
-) => Promise<Response<AptosConnectOutput>>
+) => Promise<UserResponse<AptosConnectOutput>>
 
 /** TODO: docs */
 export type AptosConnectInput = [silent?: boolean, networkInfo?: NetworkInfo]

@@ -1,4 +1,4 @@
-import { NetworkInfo, Response } from '../misc'
+import { NetworkInfo, UserResponse } from '../misc'
 
 /** Version of the feature. */
 export type AptosChangeNetworkVersion = '1.0.0'
@@ -17,7 +17,7 @@ export type AptosChangeNetworkFeature = {
 /** TODO: docs */
 export type AptosChangeNetworkMethod = (
   input: AptosChangeNetworkInput
-) => Promise<Response<AptosChangeNetworkOutput>>
+) => Promise<UserResponse<AptosChangeNetworkOutput>>
 /** TODO: docs */
 export type AptosChangeNetworkInput = NetworkInfo
 

@@ -14,13 +14,13 @@ export interface NetworkInfo {
   url?: string // RPC URL of the network.
 }
 
-export interface Rejected {
-  status: 'rejected'
-  reason?: string
+export interface UserApproval<TResponseArgs> {
+  status: 'approved'
+  args: TResponseArgs
 }
 
-export interface Approved<TArgs> {
-  status: 'approved'
-  args: TArgs
+export interface UserRejection {
+  status: 'rejected'
 }
-export type Response<TArgs> = Approved<TArgs> | Rejected
+
+export type UserResponse<TResponseArgs> = UserApproval<TResponseArgs> | UserRejection

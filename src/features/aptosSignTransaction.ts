@@ -1,5 +1,5 @@
 import { AnyRawTransaction, AccountAuthenticator } from '@aptos-labs/ts-sdk'
-import { Response } from '../misc'
+import { UserResponse } from '../misc'
 
 /** Version of the feature. */
 export type AptosSignTransactionVersion = '1.0.0'
@@ -19,8 +19,9 @@ export type AptosSignTransactionFeature = {
 }
 /** TODO: docs */
 export type AptosSignTransactionMethod = (
-  transaction: AnyRawTransaction
-) => Promise<Response<AptosSignTransactionOutput>>
+  transaction: AnyRawTransaction,
+  asFeePayer?: boolean
+) => Promise<UserResponse<AptosSignTransactionOutput>>
 
 /** Output of signing transactions. */
 export type AptosSignTransactionOutput = AccountAuthenticator
